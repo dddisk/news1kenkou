@@ -19,6 +19,8 @@ class ArticleTableView: UITableView,UITableViewDelegate, UITableViewDataSource {
         self.dataSource = self
         self.registerNib(UINib(nibName: "SiteTopTableViewCell", bundle: nil), forCellReuseIdentifier: "SiteTopTableViewCell")
     }
+    
+    
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
