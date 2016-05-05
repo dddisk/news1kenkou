@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		510D0B221CD9A409005C7649 /* Article.swift in Sources */ = {isa = PBXBuildFile; fileRef = 510D0B211CD9A409005C7649 /* Article.swift */; };
 		515EE66F1CD4DB5800DCEFA2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE66E1CD4DB5800DCEFA2 /* AppDelegate.swift */; };
 		515EE6711CD4DB5800DCEFA2 /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 515EE6701CD4DB5800DCEFA2 /* ArticleViewController.swift */; };
 		515EE6741CD4DB5800DCEFA2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 515EE6721CD4DB5800DCEFA2 /* Main.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		510D0B211CD9A409005C7649 /* Article.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Article.swift; sourceTree = "<group>"; };
 		515EE66B1CD4DB5800DCEFA2 /* news1kenkou.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = news1kenkou.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		515EE66E1CD4DB5800DCEFA2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		515EE6701CD4DB5800DCEFA2 /* ArticleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ArticleViewController.swift; path = news1kenkou/ArticleViewController.swift; sourceTree = "<group>"; };
@@ -84,11 +86,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		510D0B231CD9A476005C7649 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				510D0B211CD9A409005C7649 /* Article.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
 		515EE6621CD4DB5700DCEFA2 = {
 			isa = PBXGroup;
 			children = (
-				515EE6A41CD4E3A200DCEFA2 /* ArticleTableViewCell.swift */,
-				515EE6A51CD4E3A200DCEFA2 /* ArticleTableViewCell.xib */,
+				510D0B231CD9A476005C7649 /* model */,
 				515EE6A31CD4E12700DCEFA2 /* View */,
 				515EE6A21CD4E11400DCEFA2 /* View Controller */,
 				515EE66D1CD4DB5800DCEFA2 /* news1kenkou */,
@@ -149,6 +158,8 @@
 		515EE6A31CD4E12700DCEFA2 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				515EE6A51CD4E3A200DCEFA2 /* ArticleTableViewCell.xib */,
+				515EE6A41CD4E3A200DCEFA2 /* ArticleTableViewCell.swift */,
 				515EE69E1CD4E10200DCEFA2 /* SiteTopTableViewCell.swift */,
 				515EE69C1CD4DF4A00DCEFA2 /* ArticleTableView.swift */,
 				515EE69F1CD4E10200DCEFA2 /* SiteTopTableViewCell.xib */,
@@ -294,6 +305,7 @@
 			files = (
 				515EE6A61CD4E3A200DCEFA2 /* ArticleTableViewCell.swift in Sources */,
 				515EE6A01CD4E10200DCEFA2 /* SiteTopTableViewCell.swift in Sources */,
+				510D0B221CD9A409005C7649 /* Article.swift in Sources */,
 				515EE6711CD4DB5800DCEFA2 /* ArticleViewController.swift in Sources */,
 				515EE69D1CD4DF4A00DCEFA2 /* ArticleTableView.swift in Sources */,
 				515EE66F1CD4DB5800DCEFA2 /* AppDelegate.swift in Sources */,
