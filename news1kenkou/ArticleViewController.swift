@@ -27,9 +27,13 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
     let red = UIColor(red: 195.0 / 255, green: 123.0 / 255, blue: 175.0 / 255, alpha: 1.0)
     let black = UIColor(red: 50.0 / 255, green: 56.0 / 255, blue: 60.0 / 255, alpha: 1.0)
     //サイトURL
-    let wiredURL = "http://xn--7ckd4fsby326e.com/"
-    let shikiURL =  "http://www.100shiki.com/feed"
-    let cinraURL =   "http://www.cinra.net/feed"
+//    let wiredURL = ["http://kintore-channel.com/index.rdf",
+//                    "http://blog.livedoor.jp/diet2channel/index.rdf"]
+    let wiredArray : [String] = ["http://kintore-channel.com/index.rdf",
+                                                 "http://blog.livedoor.jp/diet2channel/index.rdf"]
+    let shikiArray : [String] =  ["http://blog.livedoor.jp/diet2channel/index.rdf,http://kintore-channel.com/index.rdf"]
+    let cinraArray : [String] =   ["http://2chdiet.net/index.rdf,http://kintore-channel.com/index.rdf"]
+//    var stringArray = ["http://blog.livedoor.jp/diet2channel/index.rdf,http://kintore-channel.com/index.rdf,http://2chdiet.net/index.rdf,http://kintore-channel.com/index.rdf"]
     //ボタンを生成
     func setTabButton(x: CGFloat, text: String, color: UIColor, tag: Int){
     var tabButton = UIButton()
@@ -61,9 +65,9 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         self.sitesScrollView.contentSize = CGSizeMake(self.view.frame.width * 3, self.sitesScrollView.frame.height)
         self.sitesScrollView.pagingEnabled = true
         //articleTableView
-        setArticleTableView(0, siteName: wired, siteImageName: wiredImageName, color: blue, siteURL: wiredURL)
-        setArticleTableView(self.view.frame.width, siteName: shiki, siteImageName: shikiImageName, color: red, siteURL: shikiURL)
-        setArticleTableView(self.view.frame.width*2, siteName: cinra, siteImageName: cinraImageName, color: yellow, siteURL: cinraURL)
+        setArticleTableView(0, siteName: wired, siteImageName: wiredImageName, color: blue, siteURLS: wiredArray)
+        setArticleTableView(self.view.frame.width, siteName: shiki, siteImageName: shikiImageName, color: red, siteURLS: shikiArray)
+        setArticleTableView(self.view.frame.width*2, siteName: cinra, siteImageName: cinraImageName, color: yellow, siteURLS: cinraArray)
         //ボタンの見た目
         setTabButton(self.view.center.x/2, text: "W", color: blue, tag: 1)
         setTabButton(self.view.center.x, text: "100", color: red, tag: 2)
@@ -120,7 +124,7 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
                 setSelectedButton(tabButtons[num], selected: true)
             } else {
                 setSelectedButton(tabButtons[num], selected: false)
-            }/Users/shiromadaisuke/Develop/xcode/iOS-Projects/news1kenkou/ArticleTableViewCell.swift
+            }
         }
     }
     
@@ -129,10 +133,10 @@ class ArticleViewController: UIViewController, UIScrollViewDelegate {
         button.layer.borderColor = button.titleLabel?.textColor.CGColor
     }
     //ArticleTableViewを生成するためのメソッド
-    func setArticleTableView(x: CGFloat, siteName: String, siteImageName: String, color: UIColor, siteURL: String){
+    func setArticleTableView(x: CGFloat, siteName: String, siteImageName: String, color: UIColor, siteURLS: [String]){
         let frame = CGRectMake(x, 0, self.view.frame.width, sitesScrollView.frame.height)
         let articleTableView = ArticleTableView(frame: frame, style: UITableViewStyle.Plain)
-        articleTableView.loadRSS(siteURL)
+        articleTableView.loadRSS(siteURLS)
         articleTableView.siteName = siteName
         articleTableView.siteImageName = siteImageName
         articleTableView.color = color
